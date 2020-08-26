@@ -1,0 +1,5 @@
+NOME COLONNA    RAPPRESENTAZIONE    TIPO DI DATO      ATTRIBUTI
+
+name            stringa             VARCHAR(150)      NOTNULL
+lastname        stringa             VARCHAR(150)      NOTNULL
+email           stringa             VARCHAR(150)      NOTNULL
