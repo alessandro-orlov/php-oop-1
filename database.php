@@ -33,6 +33,37 @@
     ],
   ];
 
+  $employees = [
+    [
+      'nome' => 'Alessandro',
+      'cognome' => 'Orlov',
+      'email' => 'alex-orlov@mail.com',
+      'Ruolo' => 'Full Stack developer',
+      'Anni di esperienza' => 4,
+    ],
+    [
+      'nome' => 'Alex',
+      'cognome' => 'Scol',
+      'email' => 'scolex@mail.com',
+      'Ruolo' => 'Team lead',
+      'Anni di esperienza' => 15,
+    ],
+    [
+      'nome' => 'Laura',
+      'cognome' => 'Bernardi',
+      'email' => 'bernardi-laura85@mail.com',
+      'Ruolo' => 'Designer',
+      'Anni di esperienza' => 6,
+    ],
+    [
+      'nome' => 'Donnie',
+      'cognome' => 'Darko',
+      'email' => 'evilbunny@mail.com',
+      'Ruolo' => 'front-end developer',
+      'Anni di esperienza' => 2,
+    ],
+  ];
+
   $amministratori = [
     [
       'nome' => 'Alessandro',

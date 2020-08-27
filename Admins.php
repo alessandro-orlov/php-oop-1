@@ -1,15 +1,15 @@
 <?php
 // Classe Administrator
-class Admin extends User {
+class Admins extends User {
 
   public $edit_article;
   public $delete_article;
 
-  public function editRight() {
+  public function getEditRight() {
     return $this->edit_article;
   }
 
-  public function deleteRight() {
+  public function getDeleteRight() {
     return $this->delete_article;
   }
 }
