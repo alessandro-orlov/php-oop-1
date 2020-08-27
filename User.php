@@ -12,7 +12,10 @@
     }
 
     public function userData() {
-      return $this->name . ' ' . $this->lastname . ' | ' . 'email: ' . $this->email . '<br>';
+      return $this->name . ' ' . $this->lastname;
+    }
+    public function userEmail() {
+      return $this->email;
     }
   };
 ?>
