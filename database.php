@@ -45,7 +45,7 @@
       'nome' => 'Alex',
       'cognome' => 'Scol',
       'email' => 'scolex@mail.com',
-      'Ruolo' => 'Team lead',
+      'Ruolo' => 'Full Stack developer',
       'Anni di esperienza' => 15,
     ],
     [

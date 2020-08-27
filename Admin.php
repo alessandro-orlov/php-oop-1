@@ -1,6 +1,6 @@
 <?php
 // Classe Administrator
-class Admins extends User {
+class Admin extends User {
 
   public $edit_article;
   public $delete_article;

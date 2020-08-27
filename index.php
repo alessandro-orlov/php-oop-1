@@ -1,7 +1,7 @@
 <?php
   include __DIR__ . '/database.php';
   require_once(__DIR__ . '/User.php');
-  require_once(__DIR__ . '/Admins.php');
+  require_once(__DIR__ . '/Admin.php');
   require_once(__DIR__ . '/Employee.php');
  ?>
 
@@ -20,7 +20,7 @@
         <!-- Stampo a schermo tutti i dati degli amministratori del blog -->
         <?php foreach ($amministratori as $admin) { ?>
           <ul>
-            <?php $singoloAdmin = new Admins($admin['nome'], $admin['cognome'], $admin['email']); ?>
+            <?php $singoloAdmin = new Admin($admin['nome'], $admin['cognome'], $admin['email']); ?>
             <?php $singoloAdmin->edit_article = $admin['Modifica articolo']; ?>
             <?php $singoloAdmin->delete_article = $admin['Elimina articolo']; ?>
 
