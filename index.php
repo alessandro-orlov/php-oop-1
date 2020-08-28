@@ -37,10 +37,11 @@
         <!-- Stampo a schermo tutti i dati degli amministratori del blog -->
         <?php foreach ($employees as $employee) { ?>
           <ul>
+
             <?php $teamMember = new Employee($employee['nome'], $employee['cognome'], $employee['email']); ?>
             <?php $teamMember->position = $employee['Ruolo']; ?>
-            <?php $exp = $teamMember->experience = $employee['Anni di esperienza']; ?>
-            <?php $teamMember->setExperience($exp);?>
+            <?php $teamMember->anni = $employee['Anni di esperienza']; ?>
+            <?php $teamMember->setExperience(); ?>
 
             <li> Admin: <b><?php echo $teamMember->userData(); ?> </b></li>
             <li> Email: <b><?php echo $teamMember->userEmail(); ?> </b></li>
