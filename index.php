@@ -24,8 +24,8 @@
             <?php $singoloAdmin->edit_article = $admin['Modifica articolo']; ?>
             <?php $singoloAdmin->delete_article = $admin['Elimina articolo']; ?>
 
-            <li> Admin: <b><?php echo $singoloAdmin->userData(); ?> </b></li>
-            <li> Email: <b><?php echo $singoloAdmin->userEmail(); ?> </b></li>
+            <li> Admin: <b><?php echo $singoloAdmin->getUserData(); ?> </b></li>
+            <li> Email: <b><?php echo $singoloAdmin->getUserEmail(); ?> </b></li>
             <li> Modifica articolo: <b><?php echo $singoloAdmin->getEditRight(); ?> </b></li>
             <li> Rimozione articolo: <b><?php echo $singoloAdmin->getDeleteRight(); ?> </b></li>
           </ul>
@@ -43,8 +43,8 @@
             <?php $teamMember->anni = $employee['Anni di esperienza']; ?>
             <?php $teamMember->setExperience(); ?>
 
-            <li> Admin: <b><?php echo $teamMember->userData(); ?> </b></li>
-            <li> Email: <b><?php echo $teamMember->userEmail(); ?> </b></li>
+            <li> Admin: <b><?php echo $teamMember->getUserData(); ?> </b></li>
+            <li> Email: <b><?php echo $teamMember->getUserEmail(); ?> </b></li>
             <li> Ruolo: <b><?php echo $teamMember->getPosition(); ?> </b></li>
             <li> Esperienza: <b><?php echo $teamMember->getExperience(); ?> </b></li>
           </ul>
@@ -57,8 +57,8 @@
           <?php foreach ($utenti as $utente) { ?>
             <ul>
               <?php $singoloUtente = new User($utente['nome'], $utente['cognome'], $utente['email']); ?>
-              <li> Utente: <b><?php echo $singoloUtente->userData(); ?> </b></li>
-              <li> Email: <b><?php echo $singoloUtente->userEmail(); ?> </b></li>
+              <li> Utente: <b><?php echo $singoloUtente->getUserData(); ?> </b></li>
+              <li> Email: <b><?php echo $singoloUtente->getUserEmail(); ?> </b></li>
             </ul>
           <?php } ?>
       </div>

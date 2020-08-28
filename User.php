@@ -11,10 +11,10 @@
       $this->email = $_email;
     }
 
-    public function userData() {
+    public function getUserData() {
       return $this->name . ' ' . $this->lastname;
     }
-    public function userEmail() {
+    public function getUserEmail() {
       return $this->email;
     }
   };
