@@ -1,25 +1,27 @@
 <?php
-  include __DIR__ . '/database.php';
-  require_once(__DIR__ . '/User.php');
-  require_once(__DIR__ . '/Admin.php');
-  require_once(__DIR__ . '/Employee.php');
- ?>
+//include all necessary files
+include __DIR__ . '/database.php';
+require_once(__DIR__ . '/User.php');
+require_once(__DIR__ . '/Admin.php');
+require_once(__DIR__ . '/Employee.php');
+require_once(__DIR__ . '/Client.php');
 
+?>
 
- <!DOCTYPE html>
- <html lang="en" dir="ltr">
-   <head>
-     <meta charset="utf-8">
-     <title></title>
-   </head>
-   <body>
-      <h1>Blog users</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<h1>Blog users</h1>
 
-      <div>
-        <h2>Amministratori:</h2>
-        <!-- Stampo a schermo tutti i dati degli amministratori del blog -->
-        <?php foreach ($amministratori as $admin) { ?>
-          <ul>
+<div>
+    <h2>Amministratori:</h2>
+    <!-- Stampo a schermo tutti i dati degli amministratori del blog -->
+    <?php foreach ($amministratori as $admin) { ?>
+        <ul>
             <?php $singoloAdmin = new Admin($admin['nome'], $admin['cognome'], $admin['email']); ?>
             <?php $singoloAdmin->edit_article = $admin['Modifica articolo']; ?>
             <?php $singoloAdmin->delete_article = $admin['Elimina articolo']; ?>
@@ -28,16 +30,15 @@
             <li> Email: <b><?php echo $singoloAdmin->getUserEmail(); ?> </b></li>
             <li> Modifica articolo: <b><?php echo $singoloAdmin->getEditRight(); ?> </b></li>
             <li> Rimozione articolo: <b><?php echo $singoloAdmin->getDeleteRight(); ?> </b></li>
-          </ul>
-        <?php } ?>
-      </div>
+        </ul>
+    <?php } ?>
+</div>
 
-      <div>
-        <h2>Team:</h2>
-        <!-- Stampo a schermo tutti i dati degli amministratori del blog -->
-        <?php foreach ($employees as $employee) { ?>
-          <ul>
-
+<div>
+    <h2>Team:</h2>
+    <!-- Stampo a schermo tutti i dati degli amministratori del blog -->
+    <?php foreach ($employees as $employee) { ?>
+        <ul>
             <?php $teamMember = new Employee($employee['nome'], $employee['cognome'], $employee['email']); ?>
             <?php $teamMember->position = $employee['Ruolo']; ?>
             <?php $teamMember->anni = $employee['Anni di esperienza']; ?>
@@ -47,21 +48,34 @@
             <li> Email: <b><?php echo $teamMember->getUserEmail(); ?> </b></li>
             <li> Ruolo: <b><?php echo $teamMember->getPosition(); ?> </b></li>
             <li> Esperienza: <b><?php echo $teamMember->getExperience(); ?> </b></li>
-          </ul>
-        <?php } ?>
-      </div>
-
-      <div>
-        <h2>Dati degli utenti:</h2>
-          <!-- Stampo a schermo tutti i dati degli utenti -->
-          <?php foreach ($utenti as $utente) { ?>
-            <ul>
-              <?php $singoloUtente = new User($utente['nome'], $utente['cognome'], $utente['email']); ?>
-              <li> Utente: <b><?php echo $singoloUtente->getUserData(); ?> </b></li>
-              <li> Email: <b><?php echo $singoloUtente->getUserEmail(); ?> </b></li>
-            </ul>
-          <?php } ?>
-      </div>
-
-   </body>
- </html>
+        </ul>
+    <?php } ?>
+</div>
+<div>
+    <h2>Dati degli utenti:</h2>
+    <!-- Stampo a schermo tutti i dati degli utenti -->
+    <?php foreach ($utenti as $utente) { ?>
+        <ul>
+            <?php $singoloUtente = new User($utente['nome'], $utente['cognome'], $utente['email']); ?>
+            <li> Utente: <b><?php echo $singoloUtente->getUserData(); ?> </b></li>
+            <li> Email: <b><?php echo $singoloUtente->getUserEmail(); ?> </b></li>
+        </ul>
+    <?php } ?>
+</div>
+<div>
+    <h2>Dati dei clienti:</h2>
+    <!--   Stampo a schermo i dati dei clienti    -->
+    <?php foreach ($clients as $client) { ?>
+        <?php $single_client = new Client($client['nome'], $client['cognome'], $client['email'],) ?>
+        <?php $single_client->from = $client['from'] ?>
+        <?php $single_client->since = $client['dal'] ?>
+        <ul>
+            <li>Cliente: <b><?php echo $single_client->getUserData(); ?></b></li>
+            <li>Email: <b><?php echo $single_client->getUserEmail(); ?></b></li>
+            <li>From: <b><?php echo $single_client->getClientFrom(); ?></b></li>
+            <li>Dal: <b><?php echo $single_client->getClientSince(); ?></b></li>
+        </ul>
+    <?php } ?> <!-- end foreach -->
+</div>
+</body>
+</html>
